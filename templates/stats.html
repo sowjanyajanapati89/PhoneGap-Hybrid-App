@@ -1,0 +1,27 @@
+<div class="bar bar-subheader bar-doitsub">
+	Your Headline Stats
+</div>
+<ion-view view-title="Dashboard" ng-init="getUserInfo()">
+  <ion-content class="padding has-subheader">
+    <div class="card">
+      <div class="item item-divider">
+        Hours Volunteered
+      </div>
+      <div class="item item-text-wrap">
+        {{profile.hours_volunteered}}
+      </div>
+      <div class="item item-divider">
+        Verified completed activities
+      </div>
+      <div class="item item-text-wrap">
+        {{profile.verified_completed}}
+      </div>
+      <div class="item item-divider">
+        Number od organisations you manage
+      </div>
+      <div class="item item-text-wrap">
+        {{profile.organisation_count}}
+      </div>
+		</div>
+  </ion-content>
+</ion-view>

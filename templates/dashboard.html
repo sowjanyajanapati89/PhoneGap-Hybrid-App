@@ -1,0 +1,40 @@
+<ion-view view-title="Dashboard" ng-init="getUserInfo()">
+  <ion-content>
+    <div class="card">
+      <div class="item item-avatar item-divider">
+        <img src="./img/avatar.png">
+        <h2>{{profile.first_name}}</h2>
+        <h3 class="email">{{profile.email}}</h3><br />
+      </div>
+      <div class="item">
+        <p>{{profile.bio}}</p>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-icon-left">
+        <i class="icon ion-document-text doit-red"></i>
+        <button class="button button-block button-doit" ng-click="viewStats()">Volunteering CV</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-ios-folder-outline doit-red"></i>
+        <button class="button button-block button-doit" ng-click="getOppInfo()">Saved opportunities</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-clipboard doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfOpportunities()">Opportunities Registered</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-ios-briefcase doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfJobs()">Saved Jobs</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-android-done-all doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfOrganisations()">Subscribed Organisations</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-android-create doit-red"></i>
+        <button class="button button-block button-doit" ng-click="editProfile()">Edit Profile</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

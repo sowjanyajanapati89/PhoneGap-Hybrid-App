@@ -1,0 +1,20 @@
+<div class="bar bar-subheader bar-doitsub">
+	My Jobs
+</div>
+<ion-view view-title="Recruiter Dashboard" ng-init="getJobsList()">
+  <ion-content class="padding has-subheader">
+    <div ng-if="hasItems">
+      You have {{total_items}} Job Ads
+    </div>
+    <div ng-if="!hasItems">
+      You have 0 Job Ads
+    </div>
+    <!--ul class="list">
+  		<li class="item" ng-repeat="item in listOfJobs" ng-click="viewJob('{{item.id}}')">
+  			<div class="list-title">{{item.title}}</div>
+  			<div class="list-desc">{{item.description}}</div>
+  			<div class="list-info"><span><i class="icon ion-star doit-red"></i> {{item.rating}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-location doit-red"></i> {{item.city}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-clock doit-red"></i> {{item.specific_start_date}}</span></div>
+  		</li>
+  	</ul-->
+  </ion-content>
+</ion-view>

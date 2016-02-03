@@ -1,0 +1,25 @@
+<div ng-if="hasItems" class="bar bar-subheader bar-doitsub">
+	{{total_items}} Jobs in United Kingdom
+</div>
+<div ng-if="!hasItems" class="bar bar-subheader bar-doitsub">
+	0 Jobs in United Kingdom
+</div>
+<ion-view view-title="Jobs" ng-init="searchJobs()">
+  <ion-content class="has-subheader">
+	<ul class="list card">
+		<li class="item" ng-repeat="item in listOfJobs" ng-class-even="'doit-bg8'" ng-click="viewJobs('{{item.id}}')">
+			<div class="list-title">{{item.title}}</div>
+			<div class="list-desc">{{item.description}}</div>
+			<div class="list-info"><span><i class="icon ion-ios-location doit-red"></i> {{item.location_name}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-telephone doit-red"></i> <a href="tel:02076911925">{{item.manager.phone}}</a></span></div>
+		</li>
+	</ul>
+  </ion-content>
+	<ion-footer-bar class="bar-stable">
+		<button ng-if="current_page > 1" class="button button-clear" ng-click="jobs_previouspage()">
+		<b class="doit-red"><span><i class="icon ion-android-arrow-dropleft-circle"></i></span>	Previous</b>
+		</button>
+		<button ng-if="!noMoreItemsAvailable" class="button button-clear" ng-click="jobs_nextpage()">
+		<b class="doit-red">Next <span><i class="icon ion-android-arrow-dropright-circle"></i></span></b>
+		</button>
+	</ion-footer-bar>
+</ion-view>

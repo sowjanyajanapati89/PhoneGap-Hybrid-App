@@ -1,0 +1,58 @@
+<div class="bar bar-subheader bar-doitsub">
+	{{orgData.name}}
+</div>
+<ion-view view-title="Organisations" ng-init="viewOrg()">
+	<ion-content class="has-subheader">
+		<div class="card">
+			<div class="item doit-bg8">
+			  <p><span><i class="icon ion-calendar doit-red"></i> {{orgData.created}}</span></p>
+				<p>&nbsp;</p>
+				<p><span><i class="icon ion-stats-bars doit-red"></i> {{orgData.active_opportunities_count}}</span> Opportunities</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col doit-bg10">About Organisation</div>
+		</div>
+		<div class="col"><p>{{orgData.blurb}}</p></div>
+		<div class="col"><p><span>Address <i class="doit-red"><a href="geo:53.33196,6.92583">view in map</a></i></span></p></div>
+		<div class="col"><p><span><i class="icon ion-ios-location doit-red"> </i>{{orgData.city}}, {{orgData.postcode}}</span></p></div>
+		<!--div class="card">
+			{{response}}
+		</div-->
+	</ion-content>
+	<ion-footer-bar align-title="left" class="button-bar">
+		<div ng-if="isLoggedin" class="button-bar">
+		  <a class="button button-doit doit-tbl" ng-click="userSubscription(orgData.id)">Subscribe</a>
+		  <a class="button button-doit doit-tbl" ng-click="viewOpportunities(orgData.id)">View Opportunities</a>
+		</div>
+    <div ng-if="!isLoggedin" class="button-bar">
+		  <a class="button button-doit doit-tbl" ng-click="login()">Subscribe</a>
+		  <a class="button button-doit doit-tbl" ng-click="viewOpportunities(orgData.id)">View Opportunities</a>
+		</div>
+	</ion-footer-bar>
+  <!--ion-content class="padding has-subheader">
+    <h4>About Organisation</h4>
+		<p>{{orgData.blurb}}</p>
+    <div class="list-info"><span><i class="icon ion-star doit-red"></i> {{orgData.rating}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-location doit-red"></i> {{orgData.city}}</span></div>
+    <div class="row">
+		  <div class="col col-50 doit-tbl doit-bg2">Contact Name</div>
+		  <div class="col col-50 doit-tbl doit-bg1">{{orgData.contact_name}}</div>
+		</div>
+    <div class="row">
+		  <div class="col col-50 doit-tbl doit-bg2">Address</div>
+		  <div class="col col-50 doit-tbl doit-bg1">{{orgData.address_1}},<br/>{{orgData.city}} - {{orgData.postcode}}</div>
+		</div>
+    <div class="row">
+		  <div class="col col-50 doit-tbl doit-bg2">Phone</div>
+		  <div class="col col-50 doit-tbl doit-bg1">{{orgData.phone}}</div>
+		</div>
+    <div class="row">
+		  <div class="col col-50 doit-tbl doit-bg2">Email</div>
+		  <div class="col col-50 doit-tbl doit-bg1">{{orgData.email}}</div>
+		</div>
+    <div class="button-bar">
+		  <a class="button button-doit doit-tbl" ng-click="login()">Save</a>
+		  <a class="button button-doit doit-tbl" ng-click="login()">Apply</a>
+		</div>
+  </ion-content-->
+</ion-view>

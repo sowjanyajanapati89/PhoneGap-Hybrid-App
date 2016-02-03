@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-dark bar-doit">
+    <h1 class="title">Skills</h1>
+    <button class="button button-clear" ng-click="hideSkillsChooser()">Done</button>
+  </ion-header-bar>
+  <ion-content>
+    <!--ion-list>
+      <ion-item ng-repeat="item in skills">
+        <ion-checkbox name="selectedSkills[]" value="{{item.name}}" ng-model="item.selected">{{item.id}}</ion-checkbox>
+      </ion-item>
+      {{selection_skills}}
+    </ion-list-->
+    <ul class="list">
+      {{skills_length}}
+      <li class="item item-checkbox" ng-repeat="item in skills">
+        <label class="checkbox checkbox-assertive">
+          <input type="checkbox" name="selectedSkills[]" value="{{item.name}}" ng-model="item.selected">
+        </label>
+        {{item.id}}
+      </li>
+      {{selection_skills}}
+    </ul>
+  </ion-content>
+</ion-modal-view>

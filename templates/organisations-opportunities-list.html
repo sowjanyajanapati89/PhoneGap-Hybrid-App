@@ -1,0 +1,26 @@
+<div ng-if="hasItems" class="bar bar-subheader bar-doitsub">
+	{{total_items}} Opportunities Found
+</div>
+<div ng-if="!hasItems" class="bar bar-subheader bar-doitsub">
+	0 Opportunities Found
+</div>
+<ion-view view-title="List Of Opportunities" ng-init="getOppsList()">
+  <ion-content class="has-subheader">
+		<ion-list>
+			<ion-item ng-repeat="item in listOfOpportunities" ng-class-even="'doit-bg8'" ng-click="viewOpportunity('{{item.id}}')">
+				<div class="list-title">{{item.title}}</div>
+				<div class="list-desc">{{item.description}}</div>
+				<div class="list-info"><span><i class="icon ion-star doit-red"></i> {{item.rating}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-location doit-red"></i> {{item.city}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-clock doit-red"></i> {{item.specific_start_date}}</span></div>
+			</ion-item>
+			<!--ion-infinite-scroll on-infinite="loadMore()" distance="1%" spinner="bubbles"></ion-infinite-scroll!-->
+		</ion-list>
+
+	<!--ul class="list card">
+		<li class="item" ng-repeat="item in listOfOpportunities" ng-class-even="'doit-bg8'" ng-click="viewOpportunity('{{item.id}}')">
+			<div class="list-title">{{item.title}}</div>
+			<div class="list-desc">{{item.description}}</div>
+			<div class="list-info"><span><i class="icon ion-star doit-red"></i> {{item.rating}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-location doit-red"></i> {{item.city}}</span> <span style="margin-left:20px;"><i class="icon ion-ios-clock doit-red"></i> {{item.specific_start_date}}</span></div>
+		</li>
+	</ul-->
+  </ion-content>
+</ion-view>

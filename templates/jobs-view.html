@@ -1,0 +1,26 @@
+<div class="bar bar-subheader bar-doitsub">
+	{{jobData.title}}
+</div>
+<ion-view title="jobs">
+  <ion-content class="has-subheader" ng-init="viewJob()">
+    <div class="card do-it-bg7">
+      <div class="item">
+				<div class="list-info"><span><i class="icon ion-ios-location doit-red"></i> {{jobData.location_name}}</span></div>
+				<div class="list-info"><span><i class="icon ion-ios-person doit-red"></i> {{jobData.role_display.name}} Role</span></div>
+				<div class="list-info"><span><i class="icon ion-stats-bars doit-red"></i> {{jobData.sector_display.name}}</span></div>
+				<div class="list-info"><span><i class="icon ion-ios-list doit-red"></i> {{jobData.contract_display.value}} Contract Type</span></div>
+				<div class="list-info"><span><i class="icon ion-social-euro doit-red"></i> {{jobData.salary_from}} - {{jobData.salary_to}} pa</span></div>
+				<div class="list-info"><span><i class="icon ion-calendar doit-red"></i> {{jobData.application_deadline}} Application Deadline</span></div>
+				<div class="list-info"><span><i class="icon ion-ios-telephone doit-red"></i> {{jobData.owner.phone}}</span></div>
+				<div class="list-info"><span><i class="icon ion-ios-at doit-red"></i> <a ng-href="{{jobData.apply_url}}">{{jobData.apply_url}}</a></span></div>
+      </div>
+			<div ng-if="is_loggedin" class="item button-bar">
+				<a class="button button-doit doit-tbl" ng-click="save_for_later(jobData.id)">Save For Later</a>
+			</div>
+			<div ng-if="!is_loggedin" class="item button-bar">
+				<a class="button button-doit doit-tbl" ng-click="login()">Save For Later</a>
+			</div>
+    </div>
+    <div class="item item-text-wrap doit-text" ng-bind-html="jobData.description"></div>
+  </ion-content>
+</ion-view>

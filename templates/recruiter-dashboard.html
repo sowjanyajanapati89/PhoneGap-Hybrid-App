@@ -1,0 +1,33 @@
+<ion-view view-title="Recruiter Dashboard" ng-init="getUserInfo()">
+  <ion-content class="padding">
+    <div class="card">
+      <div class="item item-divider">
+        <!--img src="./img/avatar.png"-->
+        <h2>{{profile.first_name}}</h2>
+        <h3>{{profile.email}}</h3>
+      </div>
+    </div>
+    <div class="list">
+      <div class="item item-icon-left">
+        <i class="icon ion-ios-people doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfOrganisations()">Organisations</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-document-text doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfOpportunities()">Opportunities</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-android-folder-open doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfApplications()">Applications</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-person doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfVolunteers()">Volunteers</button>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-android-search doit-red"></i>
+        <button class="button button-block button-doit" ng-click="listOfJobs()">Job Ads</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

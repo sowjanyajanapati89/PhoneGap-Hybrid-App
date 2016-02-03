@@ -1,0 +1,39 @@
+<div class="bar bar-subheader bar-doitsub">
+	Find Jobs
+</div>
+<ion-view view-title="Jobs">
+  <ion-content class="has-subheader">
+		<div class="list list-inset">
+			<div class="item item-input-inset">
+				<label class="item item-input-wrapper item-select" ng-click="showRolesChooser()">
+				  <span class="input-label">
+				    Roles
+				  </span>
+				  <span><small>{{selection_roles_text}}</small></span>
+				</label>
+			</div>
+			<div class="item item-input-inset">
+				<label class="item item-input-wrapper">
+			  	<span class="input-label">Location</span>
+			    <input type="text" placeholder="Enter/Find Your Location" ng-click="showLocationChooser()" ng-model="co_ordinates.location">
+			  </label>
+				<button class="button button-small button-icon" ng-click="findOrdinates()"><i class="icon ion-pinpoint"></i></button>
+			</div>
+			<div class="item item-input-inset">
+				<label class="item item-input-wrapper">
+			  	<span class="input-label">Salary From</span>
+			    <input type="text" placeholder="(ex 10000)" ng-model="salary.salary_from">
+			  </label>
+			</div>
+			<div class="item item-input-inset">
+				<label class="item item-input-wrapper">
+			  	<span class="input-label">Salary To</span>
+			    <input type="text" placeholder="(ex 20000)" ng-model="salary.salary_to">
+			  </label>
+			</div>
+			<button class="button button-block button-doit" ng-click="searchJobs()">
+	      Search
+	    </button>
+		</div>
+  </ion-content>
+</ion-view>

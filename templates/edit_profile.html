@@ -1,0 +1,80 @@
+<div class="bar bar-subheader bar-doitsub">
+	Edit Profile
+</div>
+{{ethnicities}}
+<ion-view view-title="Recruiter Dashboard" ng-init="getUserInfo()">
+  <ion-content class="has-subheader">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">First Name:</span>
+        <input type="text" ng-model="profile.first_name">
+      </label>
+			<label class="item item-input">
+        <span class="input-label">Last Name:</span>
+        <input type="text" ng-model="profile.last_name">
+      </label>
+			<div class="item item-divider">
+        Gender:
+      </div>
+			<label class="item item-radio">
+        <input type="radio" name="gender" ng-model="profile.gender">
+        <div class="item-content">
+          Male
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <label class="item item-radio">
+        <input type="radio" name="gender" ng-model="profile.gender">
+        <div class="item-content">
+          Female
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Ethnicity
+				</div>
+    		<select ng-model="profile.ethnicity">
+					<option ng-repeat="item in ethnicities" value="{{item.value}}">{{item.text}}</option>
+      	</select>
+  		</label>
+			<label class="item item-input">
+        <span class="input-label">Contact</span>
+        <input type="text" ng-model="profile.phone">
+      </label>
+      <label class="item item-input text">
+        <span class="input-label">Bio</span>
+        <textarea rows="2" ng-model="profile.bio" ng-Required="true" name="bio"></textarea>
+      </label>
+			<button class="button button-block button-doit" ng-click="updateUser()">Update</button>
+			<div class="item item-divider doit-bg1">
+				Communication Settings
+			</div>
+			<label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="email" ng-model="profile.email">
+      </label>
+			<label class="item item-input">
+        <span class="input-label">Confirm Email</span>
+        <input type="email" ng-model="profile.email_confirm">
+      </label>
+			<button class="button button-block button-doit" ng-click="updateEmail()">Update Email</button>
+			<div class="item item-divider doit-bg1">
+				Password Settings
+			</div>
+			<label class="item item-input">
+        <span class="input-label">Old Password</span>
+        <input type="password" ng-model="profile.password_current">
+      </label>
+			<label class="item item-input">
+        <span class="input-label">New Password</span>
+        <input type="password" ng-model="profile.password">
+      </label>
+			<label class="item item-input">
+        <span class="input-label">Confirm Password</span>
+        <input type="password" ng-model="profile.password_confirm">
+      </label>
+			<button class="button button-block button-doit" ng-click="updatePassword()">Change Password</button>
+		</div>
+	</ion-content>
+</ion-view>

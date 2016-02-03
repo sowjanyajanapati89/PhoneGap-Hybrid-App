@@ -1,0 +1,16 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-dark bar-doit">
+    <h1 class="title">Roles</h1>
+    <button class="button button-clear" ng-click="hideRolesChooser()">Done</button>
+  </ion-header-bar>
+  <ion-content>
+    <ul class="list">
+      <li class="item item-checkbox" ng-repeat="item in roles">
+        <label class="checkbox checkbox-assertive">
+          <input type="checkbox" name="selectedSkills[]" value="{{item.name}}" ng-model="item.selected" ng-click="updateSelection($index, roles)" />
+        </label>
+        {{item.id}}
+      </li>
+    </ul>
+  </ion-content>
+</ion-modal-view>

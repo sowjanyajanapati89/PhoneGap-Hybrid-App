@@ -1,0 +1,21 @@
+<div class="bar bar-subheader bar-doitsub">
+	My Volunteers
+</div>
+<ion-view view-title="Recruiter Dashboard" ng-init="getVolsList()">
+  <ion-content class="padding has-subheader">
+    <div ng-if="hasItems">
+      You have {{total_items}} volunteers
+    </div>
+    <div ng-if="!hasItems">
+      You have 0 volunteers
+    </div>
+    <div class="list">
+      <div class="item item-avatar" ng-repeat="item in listOfVolunteers">
+        <img src="./img/avatar.png">
+        <h2>{{item.fullname}}</h2>
+        <p>{{item.email}}</p><br />
+        <p>{{item.phone}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

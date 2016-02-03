@@ -1,0 +1,46 @@
+<ion-view view-title="SignUp">
+
+
+<ion-content>
+<form ng-submit="doSignUp()">
+          
+    <div class="list">
+       
+    
+          
+            
+              <label class="item item-input">
+              <input type="text" placeholder="First Name" ng-model="signupData.firstName"/>
+              </label>
+                          
+              <label class="item item-input">
+              <input type="text" placeholder="Last Name" ng-model="signupData.lastName"/>
+              </label>
+              
+                      
+            <label class="item item-input">
+            <input type="text" placeholder="Email or Mobile Number" ng-model="signupData.email"/>
+            </label>
+                     
+          
+          
+            <label class="item item-input">
+            <input type="password" placeholder="New Password" ng-model="signupData.password"/>
+            </label>
+        
+         	<label class="item item-input">
+            <input type="password" placeholder="Confirm New Password" ng-model="signupData.password_confirm"/>
+            </label>
+            
+        	<br></br>
+    
+			<input type="checkbox" name="TCS" ng-model="signupData.tcs">I agree to the terms & conditions<br>          
+          		
+        	<br></br>
+    	  
+          <button class="button button-block button-positive button-doit" type="submit"/>Get Started</button>
+    	  
+    </div>
+          </form>
+</ion-content>
+</ion-view>

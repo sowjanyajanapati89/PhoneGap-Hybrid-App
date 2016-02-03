@@ -1,0 +1,27 @@
+<div class="bar bar-subheader bar-doitsub">
+	Getting Started With Do-it
+</div>
+<ion-view view-title="News" ng-init="getArticles()">
+  <ion-content>
+		<div class="list card" ng-click="getStarted()">
+			<div class="item item-body doit-bg8">
+				<p class="list-title">Welcome to the home of UK volunteering!</p>
+    		<img class="full-image" src="img/team-bg.jpg">
+			</div>
+		</div>
+    <div class="col doit-bg10"><h4>News & Campaigns</h4></div>
+    <ion-list>
+      <ion-item class="item" ng-repeat="item in articles track by $index" ng-class-even="'doit-bg8'" ng-click="viewArticle(item.id)">
+        <div class="list-title">{{item.headline}}</div>
+				<div class="list-desc">{{item.description}}</div>
+			</ion-item>
+    </ion-list>
+    <ion-infinite-scroll immediate-check="false" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+    <!--ul class="list card">
+      <li class="item" ng-repeat="item in articles track by $index" ng-class-even="'doit-bg8'" ng-click="viewArticle(item.id)">
+        <div class="list-title">{{item.headline}}</div>
+				<div class="list-desc">{{item.description}}</div>
+			</li>
+		</ul-->
+	</ion-content>
+</ion-view>

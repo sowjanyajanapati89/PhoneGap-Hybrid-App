@@ -1,0 +1,25 @@
+<div ng-if="hasItems" class="bar bar-subheader bar-doitsub">
+	{{total_items}} Organisations listed
+</div>
+<div ng-if="!hasItems" class="bar bar-subheader bar-doitsub">
+	You have 0 organisations
+</div>
+<ion-view view-title="Organisations" ng-init="listOrgs()">
+  <ion-content class="has-subheader">
+		<ul class="list card">
+			<li class="item" ng-repeat="item in listOfOrgs" ng-class-even="'doit-bg8'" ng-click="viewOrg('{{item.id}}')">
+				<div class="list-title">{{item.name}}</div>
+				<div class="list-info"><span><i class="icon ion-ios-location doit-red"></i> {{item.city}}, {{item.postcode}}</span></div>
+			</li>
+		</ul>
+		<!--ion-infinite-scroll immediate-check="false" ng-if="!noMoreItemsAvailable" on-infinite="orgsPagination()" distance="10%"></ion-infinite-scroll-->
+  </ion-content>
+	<ion-footer-bar class="bar-stable">
+		<button ng-if="current_page > 1" class="button button-clear" ng-click="organisations_previouspage()">
+		<b class="doit-red"><span><i class="icon ion-android-arrow-dropleft-circle"></i></span>	Previous</b>
+		</button>
+		<button ng-if="!noMoreItemsAvailable" class="button button-clear" ng-click="organisations_nextpage()">
+		<b class="doit-red">Next <span><i class="icon ion-android-arrow-dropright-circle"></i></span></b>
+		</button>
+	</ion-footer-bar>
+</ion-view>

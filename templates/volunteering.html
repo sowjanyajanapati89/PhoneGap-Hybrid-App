@@ -1,0 +1,46 @@
+<ion-view view-title="Do-It" ng-init=''>
+  <ion-content class="padding">
+    <br>Start Volunteering</br>
+    <div class="list list-inset">
+      <div class="item item-input-inset">
+        <label class="item item-input-wrapper" placeholder="choose your location" ng-model="distance.location" ng-click="showLocationChooser()">
+          <span class="input-label">
+            Location
+          </span>
+			    <span><small>{{location_text}}</small></span>
+        </label>
+        <button class="button button-small button-icon" ng-click="findOrdinates()"><i class="icon ion-pinpoint"></i></button>
+      </div>
+      <div class="item item-input-inset">
+        <label class="item item-input-wrapper item-select" ng-model="formData.miles" ng-click="showDistanceChooser()">
+          <span class="input-label">
+            Within
+          </span>
+			    <span><small>{{distance_text}}</small></span>
+         </label>
+       </div>
+       <div class="item item-input-inset">
+         <label class="item item-input-wrapper item-select" ng-model="formData.interests" ng-click="showInterestedinChooser()">
+   			  <span class="input-label">
+   			    Interests
+   			  </span>
+   			  <span><small>{{interests_text}}</small></span>
+   			</label>
+       </div>
+       <div class="item item-input-inset">
+         <label class="item item-input-wrapper item-select" ng-model="formData.skills" ng-click="showSkillsChooser()">
+   			  <span class="input-label">
+   			    Skills
+   			  </span>
+   			  <span><small>{{skills_text}}</small></span>
+   			</label>
+       </div>
+			<button class="button button-block button-doit" ng-click="searchOpportunities()">Search</button>
+
+	    <!--button class="button button-block button-doit" ng-click="login()">
+	      Test Login
+	    </button-->
+
+		</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+<div class="bar bar-subheader bar-doitsub">
+	My Applications
+</div>
+<ion-view view-title="Recruiter Dashboard" ng-init="getAppsList()">
+  <ion-content class="padding has-subheader">
+    <div ng-if="hasItems">
+      You have {{total_items}} applications
+    </div>
+    <div ng-if="!hasItems">
+      You have 0 applications
+    </div>
+    <ul class="list">
+  		<li class="item" ng-repeat="item in listOfApplications" ng-click="viewApplication('{{item.id}}')">
+        <div class="list-title">{{item.opportunity.title}}</div>
+        <div class="list-desc">{{item.opportunity.description}}</div>
+        <div class="list-info"><span><i class="icon ion-android-contact doit-red"></i> {{item.user.full_name}}</span></div>
+        <div class="list-info"><span><i class="icon ion-android-drafts doit-red"></i> {{item.user.email}}</span></div>
+        <div class="list-info"><span><i class="icon ion-ios-telephone doit-red"></i> {{item.user.phone}}</span></div>
+  		</li>
+  	</ul>
+  </ion-content>
+</ion-view>

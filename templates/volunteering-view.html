@@ -1,0 +1,97 @@
+<div class="bar bar-subheader bar-doitsub">
+	{{opportunityData.title}}
+</div>
+<ion-view view-title="Opportunities" ng-init="viewOpportunity()">
+	<ion-content class="has-subheader">
+		<div class="list card">
+			<div class="row">
+			  <div class="col col-50 doit-tbl doit-bg2">Status</div>
+			  <div class="col col-50 doit-tbl doit-bg1">{{opportunityData.status}}</div>
+			</div>
+
+			<div class="row">
+			  <div class="col col-50 doit-tbl doit-bg2">Posted</div>
+			  <div class="col col-50 doit-tbl doit-bg1">{{opportunityData.created}}</div>
+			</div>
+
+			<div class="row">
+			  <div class="col col-50 doit-tbl doit-bg2">When</div>
+			  <div class="col col-50 doit-tbl doit-bg1">{{opportunityData.advertise_start_date}} - {{opportunityData.advertise_end_date}}</div>
+			</div>
+
+			<div class="row">
+			  <div class="col col-50 doit-tbl doit-bg2">Volunteers Required</div>
+			  <div class="col col-50 doit-tbl doit-bg1">{{opportunityData.places_available}}</div>
+			</div>
+
+			<div class="item doit-bg8">
+				<p>{{opportunityData.owner_recruiter.name}}<span> Organisation</span></p></br >
+
+				<a class="button button-doit" ng-click="userSubscription(opportunityData.owner_recruiter_id)">Subscribe</a>
+			</div>
+
+			<div class="row">
+			  <div class="col doit-bg10">About Opportunity</div>
+			</div>
+			<div class="col"><p>{{opportunityData.description}}</p></div>
+
+			<div class="row">
+			  <div class="col doit-bg10">About Organisation</div>
+			</div>
+			<div class="col"><p>{{opportunityData.owner_recruiter.blurb}}</p></div>
+
+			<div class="row">
+			  <div class="col doit-bg10">What They Are Looking For</div>
+			</div>
+			<div class="col"><p>{{opportunityData.blurb}}</p></div>
+
+			<div class="row">
+			  <div class="col doit-bg10">Practical Considerations</div>
+			</div>
+			<div class="col"><p>{{opportunityData.practical}}</p></div>
+
+			<div class="row">
+			  <div class="col doit-bg10">Ideal For</div>
+			</div>
+			<div class="col">
+				<ul>
+					<li ng-repeat="item in opportunityData.suitibilities">
+						{{item.name}}
+					</li><br />
+				</ul>
+			</div>
+			<div class="row">
+			  <div class="col col-50 doit-tbl doit-bg10">Skills Gained</div>
+			  <div class="col col-50 doit-tbl doit-bg10">Skills Required</div>
+			</div>
+			<div class="row">
+			  <div class="col col-50 doit-tbl doit-bg2">
+			  	<ul>
+						<li ng-repeat="item in opportunityData.skills_gained">
+							{{item.name}}
+						</li>
+					</ul>
+			  </div>
+			  <div class="col col-50 doit-tbl doit-bg2">
+					<ul>
+						<li ng-repeat="item in opportunityData.skills_required">
+							{{item.name}}
+						</li><br/>
+					</ul>
+			  </div>
+			</div>
+			<div class="col"><p><span>Where <i class="doit-red">view in map</i></span></p></div>
+			<div class="col"><p><span><i class="icon ion-ios-location doit-red"> </i>{{opportunityData.location_name}}</span></p></div>
+		</div>
+	</ion-content>
+	<ion-footer-bar align-title="left">
+		<div ng-if="is_loggedin" class="button-bar">
+		  <button class="button button-doit doit-tbl" ng-click="saveOpportunity()">Save</button>
+		  <button class="button button-doit doit-tbl" ng-click="apply_opportunity()">Apply</button>
+		</div>
+		<div ng-if="!is_loggedin" class="button-bar">
+		  <a class="button button-doit doit-tbl" ng-click="login()">Save</a>
+		  <a class="button button-doit doit-tbl" ng-click="login()">Apply</a>
+		</div>
+	</ion-footer-bar>
+</ion-view>
